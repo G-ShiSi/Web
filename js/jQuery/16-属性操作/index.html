@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.baidu.com" title="百度">gss</a>
+    <input type="checkbox" name="" id="" checked>
+    <div index=1 data-index="2"></div>
+    <span>123</span>
+    <script>
+        $(function () {
+            $('a').prop('href', 'https://www.youtube.com/playlist?list=PL5e68lK9hEzdYG6YQZCHtM9gon_cDNQMh')
+            $('input').change(function () {
+                console.log($(this).prop('checked'));
+            })
+            console.log($('div').attr('index'));
+            console.log($('div').attr('data-index'));
+            $('span').data('uname', 'gss')
+            console.log($('span').data('uname'));
+            console.log($('div').data('index'));
+
+        })
+    </script>
+</body>
+
+</html>

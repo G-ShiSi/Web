@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            border-collapse: collapse;
+        }
+
+        table {
+            margin: 50vh auto;
+            transform: translateY(-50%);
+        }
+
+        th {
+            border: 1px solid;
+
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>代码</th>
+                <th>名称</th>
+                <th>最新公布净值</th>
+                <th>累计净值</th>
+                <th>前单位净值</th>
+                <th>净值增长率</th>
+        <tbody>
+            <tr>
+                <th>003526</th>
+                <th>农银金穗3个月开放债券</th>
+                <th>0.075</th>
+                <th>0.079</th>
+                <th>0.074</th>
+                <th>+0.047%</th>
+            </tr>
+            <tr>
+                <th>003526</th>
+                <th>农银金穗3个月开放债券</th>
+                <th>0.075</th>
+                <th>0.079</th>
+                <th>0.074</th>
+                <th>+0.047%</th>
+            </tr>
+            <tr>
+                <th>003526</th>
+                <th>农银金穗3个月开放债券</th>
+                <th>0.075</th>
+                <th>0.079</th>
+                <th>0.074</th>
+                <th>+0.047%</th>
+            </tr>
+            <tr>
+                <th>003526</th>
+                <th>农银金穗3个月开放债券</th>
+                <th>0.075</th>
+                <th>0.079</th>
+                <th>0.074</th>
+                <th>+0.047%</th>
+            </tr>
+            <tr>
+                <th>003526</th>
+                <th>农银金穗3个月开放债券</th>
+                <th>0.075</th>
+                <th>0.079</th>
+                <th>0.074</th>
+                <th>+0.047%</th>
+            </tr>
+            <tr>
+                <th>003526</th>
+                <th>农银金穗3个月开放债券</th>
+                <th>0.075</th>
+                <th>0.079</th>
+                <th>0.074</th>
+                <th>+0.047%</th>
+            </tr>
+        </tbody>
+        </tr>
+        </thead>
+    </table>
+    <script>
+        var tr = document.querySelector('tbody').querySelectorAll('tr')
+        for (var i = 0; i < tr.length; i++) {
+
+            tr[i].onmouseover = function () {
+                // for (var i = 0; i < tr.length; i++) {
+                //     tr[i].style.backgroundColor = '';
+                // }
+                this.style.backgroundColor = 'pink';
+            }
+            tr[i].onmouseout = function () {
+                this.style.backgroundColor = '';
+            }
+        }
+        console.dir(tr)
+    </script>
+</body>
+
+</html>

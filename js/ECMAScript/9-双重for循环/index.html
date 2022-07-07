@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        num = prompt('输入几行')
+        for (var counter1 = 1; counter1 <= num; counter1++) {
+            var star = '';
+            // 这里如果先写加法会变成拼接
+            for (var counter2 = num - counter1 + 1; counter2 >= 1; counter2--) {
+                star += '⭐'
+            }
+            console.log(star)
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

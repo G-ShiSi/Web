@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mg {
+            position: absolute;
+
+            width: 100px;
+            height: 100px;
+            left: 0px;
+            top: 0px;
+            background-color: rgba(127, 255, 212, .5);
+
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            float: left;
+            width: 80vh;
+        }
+
+        .sample {
+            width: 100%;
+        }
+
+        .show {
+            float: left;
+            width: 600px;
+            height: 600px;
+            background-color: aqua;
+            overflow: hidden;
+        }
+
+
+        .show img {
+            transform: translate(0px, 0px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/wallhaven-285836.jpg" alt="" class="sample">
+        <div class="mg"></div>
+    </div>
+    <div class="show">
+        <img src="images/wallhaven-285836.jpg" alt="">
+    </div>
+
+
+    <script>
+        var mg = document.querySelector('.mg')
+        var container = document.querySelector('.container')
+        var sample = document.querySelector('.sample')
+        var show = document.querySelector('.show')
+        //left是放大镜到父盒子的左距，在这里父盒子就是body
+        var left = mg.offsetLeft;
+        var topp = mg.offsetTop;
+        //修改原图大小
+        show.children[0].style.width = sample.offsetWidth * show.offsetWidth / mg.offsetWidth + 'px'
+        console.log(sample.offsetWidth, show.offsetWidth, mg.offsetWidth, container.children[0].style.width);
+        //给container盒子添加鼠标移动事件的处理函数
+        container.addEventListener('mousemove', move)
+        //move函数实现移动鼠标放大镜跟随移动效果
+        function move(e) {
+            //x是鼠标到container的左距
+            var x = 0;
+            var y = 0;
+            //mgLeft和mgTop分别是放大镜的左上距
+            var mgLeft = 0;
+            var mgTop = 0;
+            changePosition()
+            districtScope();
+            function changePosition() {
+                x = e.pageX - left
+                y = e.pageY - topp
+                container.style.cursor = 'move'
+                mgLeft = e.pageX - 0.5 * mg.offsetWidth
+                mgTop = e.pageY - 0.5 * mg.offsetHeight
+
+                mg.style.left = mgLeft + 'px'
+                mg.style.top = mgTop + 'px'
+            }
+
+            function districtScope(e) {
+                //x / container.offsetWidth计算出鼠标当前位置在样图的横纵坐标比例
+                // console.log(mgLeft / container.offsetWidth);
+                // console.log(mgTop / container.offsetHeight);
+                // console.log(container.offsetWidth);
+                // console.log(show.children[0].offsetWidth);
+
+                console.log('translate(-' + (mgLeft / container.offsetWidth) * show.children[0].offsetWidth + 'px -' + (mgTop / container.offsetHeight) * show.children[0].offsetHeight + 'px) ');
+                show.children[0].style.transform = 'translate(-' + (mgLeft / container.offsetWidth) * show.children[0].offsetWidth + 'px,-' + (mgTop / container.offsetHeight) * show.children[0].offsetHeight + 'px) '
+                console.log(11);
+                // console.log(mg.offsetWidth);
+                // console.log(show.offsetWidth);
+                // console.log(mg.offsetWidth / show.offsetWidth);
+            }
+        }
+
+        // mg.addEventListener('mousedown', function (e) {
+        //     var left = mg.offsetLeft;
+        //     var topp = mg.offsetTop;
+        //     var x = e.pageX - left
+        //     var y = e.pageY - topp
+
+        //     document.addEventListener('mousemove', move)
+        //     function move(e) {
+        //         mg.style.cursor = 'move'
+        //         mg.style.left = e.pageX - x + 'px'
+        //         mg.style.top = e.pageY - y + 'px'
+        //     }
+        //     document.addEventListener('mouseup', function () {
+        //         document.removeEventListener('mousemove', move)
+        //         mg.style.cursor = 'default'
+        //     })
+        // })
+
+
+    </script>
+</body>
+
+</html>

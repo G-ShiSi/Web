@@ -1,0 +1,19 @@
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+.header a {
+  color: red;
+}
+.header a:hover {
+  color: aqua;
+}
+.header a::after {
+  color: antiquewhite;
+}
+div {
+  width: 500px;
+  height: 200px;
+  border: 8px solid red;
+}

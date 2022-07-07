@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <form @submit.prevent="demo">
+            <label for="account"> 账号：</label>
+            <input type="text" name="" id="account" v-model.trim="account"><br>
+            <label for="pwd"> 密码：</label>
+            <input type="password" name="" id="pwd" v-model="password"><br>
+            性别 ：
+            <label for="man">男</label>
+            <input type="radio" name="sex" id="man" value="man" v-model="sex">
+            <label for="man">女</label>
+            <input type="radio" name="sex" id="woman" value="woman" v-model="sex"><br>
+            爱好 ：
+            <label for="study">学习</label>
+            <input type="checkbox" name="hobby" id="study" v-model="hobby" value="study">
+            <label for="movie">电影</label>
+            <input type="checkbox" name="sex" id="movie" v-model="hobby" value="movie">
+            <label for="game">游戏</label>
+            <input type="checkbox" name="sex" id="game" v-model="hobby" value="game"><br>
+            所属校区
+            <select name="" id="" v-model="city">
+                <option value="">请选择校区</option>
+                <option value="ChangSha">长沙</option>
+                <option value="XiAn">西安</option>
+                <option value="ShangHai">上海</option>
+            </select><br>
+            其他信息 <br>
+            <textarea name="" id="" cols="30" rows="10" style="resize: none;" v-model.lazy="other"></textarea><br>
+            <label for="agreement">阅读并接受 <a href="http://github.com">用户协议</a></label>
+            <input type="checkbox" name="agreement" id="agreement" checked="checked" v-model="judge">
+            <button>提交</button>
+        </form>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el: '#root',
+            data: {
+                account: '',
+                password: '',
+                sex: 'woman',
+                hobby: [],
+                city: '',
+                other: '',
+                judge: ''
+            },
+            methods: {
+                demo() {
+
+                    console.log(JSON.stringify(this._data));
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

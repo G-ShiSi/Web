@@ -1,0 +1,13 @@
+ul li {
+    float: left;
+    list-style: none;
+    width: 150px;
+    height: 200px;
+    border: 10px solid red;
+    margin-left: -10px;
+}
+
+ul li:hover {
+    position: relative;
+    border: 10px solid blue;
+}

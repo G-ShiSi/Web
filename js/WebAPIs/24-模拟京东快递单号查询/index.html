@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            margin: 0 auto;
+        }
+
+        input {
+            outline: none;
+        }
+
+        .prompt input[type='text'] {
+            width: 200px;
+            height: 30px;
+            padding-left: 1em;
+            font-size: larger;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-bottom: none;
+            box-shadow: 0px 9px 3px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .input input[type='text'] {
+            width: 200px;
+            padding-left: 1em;
+            font-size: medium;
+        }
+
+        .input input[type='button'] {
+            width: 60px;
+            width: 60px;
+        }
+
+        .arrows {
+
+            width: 0;
+            height: 0;
+            border-color: #fff transparent transparent transparent;
+            border-style: solid;
+            border-width: 10px 10px 10px 10px;
+            transform: translateX(10px);
+
+        }
+
+        .prompt {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <div class="prompt">
+            <input type="text" name="" id="">
+            <div class="arrows"></div>
+        </div>
+
+        <div class="input">
+            <input type="text" name="" id="">
+
+            <input type="button" value="查询">
+        </div>
+
+    </form>
+    <script>
+        var search = document.querySelector('.input').children[0]
+        var prompt = document.querySelector('.prompt')
+        search.addEventListener('keyup', function (e) {
+            if (search.value.length > 0) {
+                prompt.style.display = 'block'
+
+                prompt.children[0].value = this.value
+            } else {
+                prompt.style.display = 'none'
+            }
+        })
+        search.addEventListener('blur', function (e) {
+            prompt.style.display = 'none'
+        })
+        search.addEventListener('focus', function (e) {
+            if (search.value.length > 0) {
+                prompt.style.display = 'block'
+
+                prompt.children[0].value = this.value
+            } else {
+                prompt.style.display = 'none'
+            }
+        })
+
+    </script>
+</body>
+
+</html>

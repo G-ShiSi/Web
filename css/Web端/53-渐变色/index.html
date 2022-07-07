@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>css背景渐变--线性渐变</title>
+
+    <style>
+        .demo {
+
+            width: 500;
+
+            height: 300;
+
+            margin: 50px auto;
+
+        }
+
+        .demo * {
+
+            width: 200px;
+
+            height: 200px;
+
+            margin: 20px;
+
+            text-align: center;
+
+            line-height: 200px;
+
+            color: #fff;
+
+            font-size: 16px;
+
+            float: left;
+
+        }
+
+        .demo1 {
+
+            /* 底色 */
+
+            background-color: #fd0d0d;
+
+            /* chrome 2+, safari 4+; multiple color stops */
+
+            background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.32, #fd0d0d), color-stop(0.66, #d89e3c), color-stop(0.83, #97bb51));
+
+            /* chrome 10+, safari 5.1+ */
+
+            background-image: -webkit-linear-gradient(#fd0d0d, #d89e3c, #97bb51);
+
+            /* firefox; multiple color stops */
+
+            background-image: -moz-linear-gradient(top, #fd0d0d, #d89e3c, #97bb51);
+
+            /* ie 6+ */
+
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd0d0d', endColorstr='#d89e3c');
+
+            /* ie8 + */
+
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fd0d0d', endColorstr='#d89e3c')";
+
+            /* ie10 */
+
+            background-image: -ms-linear-gradient(#fd0d0d, #d89e3c, #97bb51);
+
+            /* opera 11.1 */
+
+            background-image: -o-linear-gradient(#fd0d0d, #d89e3c, #97bb51);
+
+            /* 标准写法 */
+
+            background-image: linear-gradient(#fd0d0d, #d89e3c, #97bb51);
+
+
+
+        }
+
+        .demo2 {
+
+            /* 底色 */
+
+            background-color: #d41a1a;
+
+            /* chrome 2+, safari 4+; multiple color stops */
+
+            background-image: -webkit-gradient(linear, left bottom, right top, color-stop(0.32, #d41a1a), color-stop(0.66, #d9e60c), color-stop(0.83, #5c7c99));
+
+            /* chrome 10+, safari 5.1+ */
+
+            background-image: -webkit-linear-gradient(45deg, #d41a1a, #d9e60c, #5c7c99);
+
+            /* firefox; multiple color stops */
+
+            background-image: -moz-linear-gradient(45deg, #d41a1a, #d9e60c, #5c7c99);
+
+            /* ie10 */
+
+            background-image: -ms-linear-gradient(45deg, #d41a1a 0%, #d9e60c 100%);
+
+            /* opera 11.1 */
+
+            background-image: -o-linear-gradient(45deg, #d41a1a, #d9e60c);
+
+            /* 标准写法 */
+
+            background-image: linear-gradient(45deg, #d41a1a, #d9e60c);
+
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="demo">
+
+        <div class="demo1">基本线性渐变--自上而下</div>
+
+        <div class="demo2">基本线性渐变--45度角</div>
+
+    </div>
+
+</body>
+
+</html>

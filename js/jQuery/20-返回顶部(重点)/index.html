@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+    <style>
+        .slider-bar {
+            position: fixed;
+            left: 50%;
+            top: 300px;
+            margin-left: 600px;
+            width: 45px;
+            height: 130px;
+            background-color: pink;
+        }
+
+        .w {
+            width: 1200px;
+            margin: 10px auto;
+        }
+
+        .header {
+            height: 150px;
+            background-color: purple;
+        }
+
+        .banner {
+            height: 250px;
+            background-color: skyblue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-bar">
+        <div class="goHeader">返回顶部</div>
+        <div class="goBanner">返回导航</div>
+        <div class="goMain">返回主题</div>
+    </div>
+    <div class="header w">头部区域</div>
+    <div class="banner w">banner区域</div>
+    <div class="main w">主体部分</div>
+    <script>
+        $(function () {
+            var flag = true
+            // $(window).scroll(function () {
+            //     if ($(document).scrollTop() > 300) {
+            //         $('.slider-bar div').css('display', 'block')
+            //     } else {
+            //         $('.slider-bar div').css('display', 'none')
+            //     }
+            // })
+            $(window).scroll(function () {
+                if (flag) {
+                    $('.w').each(function (i, ele) {
+                        if ($(document).scrollTop() >= $(ele).offset().top) {
+                            $('.slider-bar div').eq(i).css('backgroundColor', 'red').siblings().css('backgroundColor', '')
+                        }
+                    })
+                }
+
+
+
+            })
+            $('.slider-bar div').mouseenter(function () {
+                $(this).css('cursor', 'pointer')
+            })
+            //这里点击第一个小盒子就会跳转到第一个大盒子的位置，故可对代码进行优化
+            $('.slider-bar div').click(function () {
+                flag = false
+                $(this).css('backgroundColor', 'red').siblings().css('backgroundColor', '')
+                $("body,html").stop().animate({
+                    scrollTop: $('.w').eq($(this).index()).offset().top
+                }, function () {
+                    flag = true
+                })
+
+            })
+            // $('.slider-bar div').eq(0).click(function () {
+            //     console.log(0);
+            //     $("html").animate({
+            //         scrollTop: $(".header").offset().top
+            //     })
+
+            // })
+            // $('.slider-bar div').eq(1).click(function () {
+            //     console.log(1);
+            //     $("html").animate({
+            //         scrollTop: $(".banner").offset().top
+            //     })
+
+            // })
+            // $('.slider-bar div').eq(2).click(function () {
+            //     console.log(2);
+            //     console.log($(".main").offset());
+
+            //     $("html").animate({
+            //         scrollTop: $(".main").offset().top
+            //     })
+
+            // })
+        })
+    </script>
+</body>
+
+</html>

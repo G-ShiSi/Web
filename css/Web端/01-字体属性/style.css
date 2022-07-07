@@ -1,0 +1,16 @@
+body {
+    font-family: 'Times New Roman', Times, serif, Arial, "Microsoft Yahei";
+    font-size: 20px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+em {
+    font-style: normal;
+}
+
+/* 标题标签比较特殊，需要单独指定文字大小 */
+/* 字体属性可以把以上文字样式综合来写节约代码 */
+/* body{
+    font:font-style font-weight font-size/line-height font-family
+} */

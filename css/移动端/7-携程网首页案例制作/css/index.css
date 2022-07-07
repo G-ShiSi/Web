@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body {
+    Max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma, "Lucida Grande", verdana, "Microsoft Yahei", STXihei,hei;
+    color: #000;
+    background:#f2f2f2;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font_hr9pej0prwa/iconfont.ttf?t=1649667449684') format('truetype');
+  }
+.search-index{
+    /* 固定定位跟父级没有关系，它以屏幕为准 */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    /* 固定的盒子应该有高度 */
+    width: 100%;
+    min-width: 320px;
+    max-width: 540px;
+    height: 44px;
+    /* background-color: pink; */
+    box-sizing: border-box;
+    
+}
+.search{
+    flex: 1;
+    border: 1.8px solid #0086f6;
+    padding-left: 10px;
+    height: 32px;
+    line-height: 28.4px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: #666;
+}
+.search::before{
+    content: "\f00d9";
+    font-family: 'iconfont';
+    padding-right: 10px;
+    font-size: 20px;
+}
+.main{
+    margin-top: 50px;
+}
+.main-nav-wrap{
+    display: flex;
+    height: 184px;
+    padding: 6px 12px 2px;
+}
+.nav-list{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 1px;
+}
+.nav-item{
+    flex: 1;
+    text-align: center;
+}
+.main-nav-wrap ul:nth-child(1) li:nth-child(1){
+    background-image: linear-gradient(180deg,#fa5956,#fb8650);
+}
+.main-nav-wrap ul:nth-child(2) li:nth-child(1){
+    background-image: linear-gradient(180deg,#3c83fa,#50b2fa);
+}
+.main-nav-wrap ul:nth-child(3) li:nth-child(1){
+    background-image: linear-gradient(180deg,#66a4ff,#5e80ff);
+}
+.main-nav-wrap ul:nth-child(4) li:nth-child(1){
+    background-image: linear-gradient(180deg,#2fc3b6,#52d9b3);
+}
+.main-nav-wrap ul:nth-child(5) li:nth-child(1){
+    background-image: linear-gradient(180deg,#ffa846,#ff8939);
+}
+.nav-item a span{
+    font-size: 12px;
+    color: #333;
+}
+.nav-item:nth-child(1) a span{
+    color: #fff;
+    font-size: 12px;
+}
+
+.nav-item a{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100%;
+}
+/* .nav-item a span{
+    flex: 1;
+    
+} */
+/* .nav-item a span{
+    flex: 1;
+    
+} */
+.nav-list li span:nth-child(1){
+    height: 28px;
+    width: 28px;
+}
+
+/* .nav-list li{
+    display: flex;
+} */
+
+.nav-icon-jiudian{
+    background: url(../upload/mainnav.png) no-repeat 0px -84px;
+    background-size: 28px auto;
+}
+.nav-icon-minsu{
+    background: url(../upload/mainnav.png) no-repeat 0px -336px;
+    background-size: 28px auto;
+}
+.nav-icon-minsu{
+    background: url(../upload/mainnav.png) no-repeat 0px -336px;
+    background-size: 28px auto;
+}
+.nav-icon-baokuan{
+    background: url(../upload/mainnav.png) no-repeat 0px 0px;
+    background-size: 28px auto;
+}
+.nav-list:first-child li{
+    background-color: #fff5f1;
+}
+.nav-icon-jipiao{
+    background: url(../upload/mainnav.png) no-repeat 0px -168px;
+    background-size: 28px auto;
+}
+nav{
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 4px 3px;
+}
+.nav-common{
+    display: flex;
+    height: 88px;
+    background-color: #2fc3b6;
+}
+.nav-common:nth-child(2){
+    margin: 4px 0;
+}
+.nav-items:nth-child(2){
+margin: 0 1px;
+background-color: #5e80ff;
+}
+.nav-items{
+    flex: 1;
+}
+.nav-items:nth-child(-n+2){
+    border-right: 1px solid #fff;
+}
+.nav-items:nth-child(n+2){
+   display: flex;
+   /* align-items: center; */
+   flex-direction: column;
+}
+.nav-items-child{
+    flex: 1;
+    text-align: center;
+    line-height:43.5px ;
+    color: #fff;
+    font-size: 14px;
+    text-shadow: 1px 1px rgba(0,0,0,.2);
+    /* width: 100%; */
+}
+.nav-items-child:first-child{
+    border-bottom: 1px solid #fff;
+}
+.subnav-entry{
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0 4px;
+    flex-wrap: wrap;
+}
+.subnav-entry li{
+    flex: 20%;
+    height: 20px;
+    background-color: #66a4ff;
+}

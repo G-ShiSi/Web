@@ -1,0 +1,14 @@
+.header {
+    background-color: rgb(98, 202, 66);
+    height: 300px;
+
+    padding: auto;
+}
+
+.son {
+    background-color: rgb(29, 20, 160);
+    height: 200px;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}

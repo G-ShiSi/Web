@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(images/1572682719167.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all 1s;
+        }
+
+        li {
+            float: left;
+        }
+
+        li img {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="baidu">
+        <li> <img src="images/1572682719167.jpeg" alt=""></li>
+        <li> <img src="images/1572682891028.jpeg" alt=""></li>
+        <li> <img src="images/1572682916634.jpeg" alt=""></li>
+        <li> <img src="images/wallhaven-3z99r9.jpg" alt=""></li>
+    </ul>
+
+    <script>
+        var bg = document.querySelectorAll('img')
+        var body = document.querySelector('body')
+        for (var i = 0; i < bg.length; i++) {
+            bg[i].onclick = function () {
+                body.style.background = 'url(' + this.src + ')'
+                body.style.backgroundSize = '100vw 100vh'
+                body.style.backgroundRepeat = 'no-repeat'
+
+            }
+        }
+    </script>
+</body>
+
+</html>

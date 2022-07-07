@@ -1,0 +1,10 @@
+a {
+    height: 50px;
+    color: pink;
+    text-decoration: none;
+    display: block;
+}
+
+div {
+    display: inline;
+}

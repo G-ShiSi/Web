@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #ccc;
+            margin: 100px auto;
+        }
+
+        .box input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        .box img {
+            width: 24px;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <label for="">
+            <img src="images/close.png" alt="">
+        </label>
+        <input type="password" name="" id="">
+    </div>
+    <script>
+        var img = document.querySelector('img')
+        console.log(img.src)
+        var label = document.querySelector('label')
+        // console.dir(label)
+        var input = document.querySelector('input')
+        label.onclick = function () {
+            if (img.src == 'http://127.0.0.1:5500/js/WebAPIs/4-%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E5%AF%86%E7%A0%81/images/close.png') {
+                img.src = 'http://127.0.0.1:5500/js/WebAPIs/4-%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E5%AF%86%E7%A0%81/images/open.png'
+                input.type = 'text'
+            } else {
+                img.src = 'http://127.0.0.1:5500/js/WebAPIs/4-%E4%BB%BF%E4%BA%AC%E4%B8%9C%E6%98%BE%E7%A4%BA%E9%9A%90%E8%97%8F%E5%AF%86%E7%A0%81/images/close.png';
+                input.type = 'password';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes run {
+            0% {
+                background-position: 0 0
+            }
+
+            10% {
+                background-position: -100% 0
+            }
+
+            20% {
+                background-position: -200% 0
+            }
+
+            30% {
+                background-position: -300% 0
+            }
+
+            40% {
+                background-position: -400% 0
+            }
+
+            50% {
+                background-position: 0 -100%
+            }
+
+            60% {
+                background-position: -100% -100%
+            }
+
+            70% {
+                background-position: -200% -100%
+            }
+
+            80% {
+                background-position: -300% -100%
+            }
+
+            90% {
+                background-position: -400% -100%
+            }
+
+            100% {
+                background-position: 0 0
+            }
+        }
+
+        div {
+            width: 137.2px;
+            height: 157px;
+            background: url('雪碧图.png');
+            animation: run 1s steps(1) infinite;
+            animation-name: run;
+            animation-duration: 1s;
+            animation-timing-function: steps(1);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

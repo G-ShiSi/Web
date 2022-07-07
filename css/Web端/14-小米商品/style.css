@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.commodity {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    width: 234px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+img {
+    height: 160px;
+    width: 160px;
+
+}
+
+h3 {
+    font-size: 14px;
+    font-weight: 400;
+    width: 214px;
+    height: 21px;
+    margin: 0 auto 2px;
+}
+
+.slogan {
+    font-size: 12px;
+    color: #b0b0b0;
+    height: 18px;
+    margin: 0 10px 10px;
+}
+
+.current {
+    color: #ff6700;
+    font-size: 14px;
+}
+
+.orginal {
+    font-size: 14px;
+    color: #b7b0b0;
+}

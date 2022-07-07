@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //统计单一字符频率
+        function frequency(char, str) {
+            var position = 0, counter = 0;
+            while (str.indexOf(char, position) != -1) {
+                position = str.indexOf(char, position) + 1
+                counter++
+            }
+            return counter
+        }
+        //去重
+        function unique(arr1) {
+            arr2 = new Array();
+            for (var key in arr1) {
+                if (arr1.indexOf(arr1[key]) != arr1.lastIndexOf(arr1[key]) && key == arr1.indexOf(arr1[key])) {
+                    arr2.push(arr1[key])
+                } else if (arr1.indexOf(arr1[key]) == arr1.lastIndexOf(arr1[key])) {
+                    arr2.push(arr1[key])
+                }
+            }
+            return arr2;
+        }
+        var str = 'aaaaasssddffffffgghjuuullllllluii', code = '', counter = 0;
+        var strUnique = unique(str);
+        // console.log(strUnique);
+        for (var k in strUnique) {
+            if (frequency(strUnique[k], str) > counter) {
+                code = strUnique[k]
+                counter = frequency(strUnique[k], str)
+            }
+        }
+        console.log(code + '出现了' + counter + '次');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

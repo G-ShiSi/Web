@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+
+    height: 164px;
+    width: 250px;
+    border: 1px solid #cccccc;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+
+}
+
+li {
+    margin-left: 10px;
+    color: #666;
+    height: 23px;
+    line-height: 23px;
+    padding-left: 8px;
+}
+
+.header {
+    height: 34px;
+    border-bottom: 1px dotted #ccc;
+    padding-left: 10px;
+    line-height: 34px;
+}
+
+h3 {
+    font-weight: 400;
+}

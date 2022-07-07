@@ -1,0 +1,13 @@
+div {
+    margin: 200px auto;
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    /* 这个单词的意思是如果文字显示不开也必须一行内显示 */
+    white-space: nowrap;
+    /* 溢出的部分隐藏起来 */
+    overflow: hidden;
+    /* 文字溢出的时候用省略号表示 */
+    text-overflow: ellipsis;
+
+}

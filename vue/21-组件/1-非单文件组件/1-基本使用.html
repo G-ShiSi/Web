@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 编写组件标签 -->
+        <school></school>
+        <hr>
+        <student></student>
+    </div>
+    <hr>
+    <div id="root2">
+        <hello></hello>
+    </div>
+</body>
+<script>
+    Vue.config.productionTip = false
+    // 创建组件
+    const school = Vue.extend({
+        template: `
+        <div>
+            <h2>学校名称：{{school.name}}</h2>
+            <h2>学校地址：{{school.address}}</h2>
+            <button @click="showName">点我提示学校名</button>
+        </div>
+        `
+        ,
+        // 组件定义时，不写el配置项，因为最终所有的组件都要被一个vm管理，由vm决定服务于哪个容器
+        data() {
+            return {
+                school: {
+                    name: '湖南科技大学',
+                    address: '湖南湘潭'
+                },
+            }
+        },
+        methods: {
+            showName() {
+                alert(this.school.name)
+            }
+        },
+    })
+    const student = Vue.extend({
+        template: `
+            <div>
+            <h2>学生姓名：{{student.name}}</h2>
+            <h2>学生年龄：{{student.age}}</h2>
+        </div>
+        `,
+        // 组件定义时，不写el配置项，因为最终所有的组件都要被一个vm管理，由vm决定服务于哪个容器
+        data() {
+            return {
+                student: {
+                    name: '辜十四',
+                    age: '20'
+                },
+            }
+        }
+    })
+    const hello = Vue.extend({
+        template: `
+        <div>
+            <h2>
+                你好！{{name}}
+            </h2>
+        </div>
+        `,
+        data() {
+            return {
+                name: '辜十四'
+            }
+        }
+    })
+    Vue.component('hello', hello)
+    //创建vm
+    new Vue({
+
+        el: '#root',
+        // 注册组件
+        components: {
+            school: school,
+            student: student
+        }
+    })
+    new Vue({
+        el: '#root2'
+    })
+</script>
+
+</html>

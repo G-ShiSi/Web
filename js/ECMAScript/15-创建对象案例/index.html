@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Hero(uname, type, blood, attack) {
+            this.name = uname;
+            this.type = type;
+            this.blood = blood;
+            this.attack = attack;
+        }
+        var lianPo = new Hero('廉颇', 'force', 500, 'jin')
+        var houYi = new Hero('后羿', 'adc', 100, 'yuan')
+        console.log(lianPo.name);
+        console.log(houYi.name);
+        console.log(lianPo);
+        for (var reserve in lianPo) {
+            console.log(reserve)
+            console.log(lianPo.reserve)
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

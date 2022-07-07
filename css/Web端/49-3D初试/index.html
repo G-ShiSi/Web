@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            position: relative;
+
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            perspective: 500px;
+            transition: all 1s;
+            transform-style: preserve-3d;
+        }
+
+        .father:hover {
+            transform: rotateY(45deg);
+        }
+
+        /* .blue {
+            margin: auto;
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        } */
+        .father div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+            transform: rotateX(60deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
+</body>
+
+</html>

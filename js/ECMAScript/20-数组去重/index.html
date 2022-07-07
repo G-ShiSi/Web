@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        arr1 = ['c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b']
+        function unique(arr1) {
+            arr2 = new Array();
+            for (var key in arr1) {
+                if (arr1.indexOf(arr1[key]) != arr1.lastIndexOf(arr1[key]) && key == arr1.indexOf(arr1[key])) {
+                    arr2.push(arr1[key])
+                } else if (arr1.indexOf(arr1[key]) == arr1.lastIndexOf(arr1[key])) {
+                    arr2.push(arr1[key])
+                }
+            }
+            return arr2;
+        }
+        console.log(unique(arr1))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+.cursor1 {
+    cursor: default;
+}
+
+.cursor2 {
+    cursor: pointer;
+}
+
+.cursor3 {
+    cursor: move;
+}
+
+.cursor4 {
+    cursor: text;
+}
+
+.cursor5 {
+    cursor: not-allowed;
+
+}

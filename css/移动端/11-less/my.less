@@ -1,0 +1,26 @@
+@border: 5px + 3;
+
+.header {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+
+    a {
+        color: red;
+
+        &:hover {
+            color: aqua;
+        }
+
+        &::after {
+            color: antiquewhite;
+        }
+    }
+
+}
+
+div {
+    width: (200px-50+100)*2;
+    height: 200px;
+    border: @border solid red;
+}

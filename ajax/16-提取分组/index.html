@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var str = '<div>我是{{name}}{{gss}}</div>'
+        var pattern = /{{([a-zA-Z]+)}}/
+
+        $.each(patternResult, function (i, item) {
+            // console.log(i);
+            // console.log(item);
+        })
+        // console.log(patternResult.index);
+        console.log(patternResult)
+        while (pattern.exec(str) != null) {
+            var patternResult = pattern.exec(str)
+            str = str.replace(patternResult[0], patternResult[1])
+
+        }
+
+        console.log(str);
+        console.log(pattern.exec(str))
+        //得到name相关的分组信息
+        //["l{name}}", "name", index: 7, input: "<div> 我是{ {name}}</div>", groups: undefined]
+
+    </script>
+</body>
+
+</html>

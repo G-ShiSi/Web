@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: url(c7e35d56-965c-4a54-aba7-404b8866bdfa3.png) no-repeat;
+            margin: 0 auto;
+        }
+
+        .beijing {
+            position: absolute;
+            top: 244px;
+            left: 567px;
+        }
+
+        .dotted {
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: #0089e4;
+            border-radius: 50%;
+        }
+
+
+
+        .beijing div[class^='circle'] {
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #0089e4;
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite;
+        }
+
+        .circle2 {
+            animation-delay: 0.4s !important;
+        }
+
+        .circle3 {
+            animation-delay: 0.8s !important;
+        }
+
+        @keyframes pulse {
+            0% {}
+
+            70% {
+                /* 这里不使用scale来放大，如果使用则阴影也会跟着一起放大，效果并不好 */
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="beijing">
+            <div class="dotted"></div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+    </div>
+</body>
+
+</html>

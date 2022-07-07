@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="../jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+    <ol>
+
+    </ol>
+    <script>
+        $(function () {
+            $('div').on({
+                mouseenter: function () {
+                    $(this).css('background', 'skyblue')
+                },
+                click: function () {
+                    $(this).css('background', 'purple')
+                },
+                mouseleave: function () {
+                    $(this).css('background', 'pink')
+                }
+            });
+            $('ul').on('click', 'li', function () {
+                alert(11)
+            })
+            $('ol').on('click', 'li', function () {
+                alert(22)
+            })
+            var li = $('<li>新建</li>')
+            $("ol").append(li);
+            // $('ol li').click(function () {
+            //     alert(22)
+            // })
+
+            $("div").on("click", "p", function () {
+                alert("俺可以给动态生成的元素绑定事件")
+            });
+            $("div").append($("<p>我是动态创建的></p>"));
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

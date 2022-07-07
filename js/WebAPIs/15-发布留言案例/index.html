@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="发布">
+    </form>
+    <ul>
+    </ul>
+    <script>
+        var btn = document.querySelector('input');
+        var ul = document.querySelector('ul');
+        btn.onclick = function () {
+            var text = document.querySelector('textarea').value;
+            document.querySelector('textarea').value = ''
+            var newLi = document.createElement('li')
+            newLi.innerHTML = text
+            var newButton = document.createElement('button')
+            newButton.innerHTML = '删除'
+            newLi.appendChild(newButton)
+            console.log(newLi);
+            // ul.appendChild(newLi)
+            ul.insertBefore(newLi, ul.children[0])
+            var delButton = document.querySelectorAll('button')
+            for (var i = 0; i < delButton.length; i++) {
+                // delButton[i].setAttribute('data-index', i)
+                delButton[i].onclick = function () {
+                    ul.removeChild(this.parentNode)
+                }
+            }
+        }
+
+    </script>
+</body>
+
+
+</html>

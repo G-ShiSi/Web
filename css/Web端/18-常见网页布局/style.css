@@ -1,0 +1,55 @@
+ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 356px;
+}
+
+.top {
+    background-color: #ecedf9;
+    height: 19%;
+}
+
+.main {
+    background-color: #555a8f;
+    height: 61%;
+    margin: 10px 0;
+}
+
+.banner {
+    background-color: bisque;
+    height: 30%;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.first, .second {
+    background-color: rgb(248, 199, 139);
+    height: 30%;
+    width: 70%;
+    margin: 10px auto;
+}
+
+li {
+    height: 85%;
+    width: 23%;
+    margin: 1% 1%;
+    background-color: rgb(193, 248, 63);
+    float: left;
+}
+
+.second {
+    background-color: rgb(252, 150, 25);
+
+}
+
+.footer {
+    background-color: #b5baf1;
+    height: 15%;
+}

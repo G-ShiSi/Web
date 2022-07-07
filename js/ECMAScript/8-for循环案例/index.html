@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var sum = 1, counter = 2;
+        for (; counter <= 100; counter++) {
+            sum += counter
+        }
+        console.log('1-100所有数的平均值')
+        console.log(sum / 100)
+
+        var sum = 0, counter = 2;
+        for (; counter <= 100; counter += 2) {
+            sum += counter
+        }
+        console.log('1-100所有偶数的和')
+        console.log(sum)
+
+        var sum = 0, counter = 1;
+        for (; counter <= 100; counter += 2) {
+            sum += counter
+        }
+        console.log('1-100所有奇数的和')
+        console.log(sum)
+
+        var sum = 0, counter = 0;
+        for (; counter <= 100; counter += 3) {
+            sum += counter
+        }
+        console.log('能被3整除的数字的和')
+        console.log(sum)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

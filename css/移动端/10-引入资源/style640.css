@@ -1,0 +1,11 @@
+div{
+    float: left;
+    width: 50%;
+    height: 100px;
+}
+div:first-child{
+    background-color: rgb(207, 221, 81);
+}
+div:last-of-type{
+    background-color: rgb(141, 29, 117);
+}

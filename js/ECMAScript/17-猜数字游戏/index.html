@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getSum(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function guessNum() {
+            num = getSum(1, 10)
+            while (true) {
+                var userNum = prompt('请输入一个数字');
+                if (userNum > num) {
+                    alert('大了')
+                } else if (userNum < num) {
+                    alert('小了')
+                } else {
+                    var userInstruct = prompt('对了,还玩吗，还玩输入1')
+                    if (userInstruct == 1) {
+                        alert('玩');
+                        guessNum()
+                    }
+                    else {
+                        alert('不玩了');
+                    }
+                    break;
+                }
+            }
+
+        }
+        guessNum()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

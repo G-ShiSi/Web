@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        thead {
+            background-color: #008cd0;
+            color: #fff;
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid;
+            font-weight: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" name="" id=""></th>
+                    <th>商品</th>
+                    <th>价钱</th>
+            <tbody>
+                <tr>
+                    <th><input type="checkbox" name="" id=""></th>
+                    <th>iPhone8</th>
+                    <th>8000</th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name="" id=""></th>
+                    <th>iPad Pro</th>
+                    <th>5000</th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name="" id=""></th>
+                    <th>iPad Air</th>
+                    <th>2000</th>
+                </tr>
+                <tr>
+                    <th><input type="checkbox" name="" id=""></th>
+                    <th>Apple Watch</th>
+                    <th>2000</th>
+                </tr>
+            </tbody>
+            </tr>
+            </thead>
+        </table>
+    </form>
+    <script>
+        // 判断传入的列表中的值是否全为真
+        var judgeList = function (list) {
+            for (var i = 0; i < list.length; i++) {
+                if (list[i].checked == false) {
+                    return false
+                }
+            }
+            return true
+        }
+        var theadCheck = document.querySelector('thead').querySelector('input')
+        var tbodyCheck = document.querySelector('tbody').querySelectorAll('input')
+
+        theadCheck.onclick = function () {
+            if (this.checked == true) {
+
+                for (var i = 0; i < tbodyCheck.length; i++) {
+
+                    tbodyCheck[i].checked = 'checked'
+                }
+            } else {
+
+                for (var i = 0; i < tbodyCheck.length; i++) {
+
+                    tbodyCheck[i].checked = ''
+                }
+            }
+        }
+        for (var i = 0; i < tbodyCheck.length; i++) {
+            // console.log(tbodyCheck[i]);
+            tbodyCheck[i].onclick = function () {
+                //在这里面i为4
+                if (judgeList(tbodyCheck) == true) {
+
+                    theadCheck.checked = 'checked'
+                } else {
+                    theadCheck.checked = ''
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
