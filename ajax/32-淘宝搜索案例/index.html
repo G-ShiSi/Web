@@ -42,12 +42,27 @@
   </script>
   <script>
     $(function () {
+      // 定义延时器的id
+      var timer = null
+      // 定义全局缓存对象
+      var cacheObj = {}
+      // 定义防抖的函数
+      function debounceSearch(kw) {
+        timer = setTimeout(() => {
+          getSuggestList(kw)
+        }, 500);
+      }
       function renderSuggestList(res) {
         if (res.result.length <= 0) {
           return $('#suggest-list').empty().hide()
         }
         var htmlStr = template('tpl-suggestList', res)
         $('#suggest-list').html(htmlStr).show()
+
+        // 获取用户输入的内容，当作键
+        var k = $('#ipt').val().trim()
+        // 需要将数据作为值进行缓存
+        cacheObj[k] = res
       }
       function getSuggestList(kw) {
         // console.log(kw);
@@ -61,11 +76,15 @@
         })
       }
       $('#ipt').on('keyup', function () {
+        clearInterval(timer)
         var keywords = $(this).val().trim()
         if (keywords.length <= 0) {
           return $('#suggest-list').empty().hide()
         }
-        getSuggestList(keywords)
+        if (cacheObj[keywords]) {
+          return renderSuggestList(cacheObj[keywords])
+        }
+        debounceSearch(keywords)
       })
     })
   </script>
